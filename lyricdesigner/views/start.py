@@ -1,5 +1,4 @@
 import arcade
-import random
 
 from lyricdesigner.drawobjects.progressbar import ProgressBar
 
@@ -21,7 +20,6 @@ class StartView(arcade.View):
         self.current_time += delta_time
         self.current_time = round(self.current_time, 2)
         self.progress_bar.progress += (delta_time / 60)
-        self.current_text = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k = 10))
 
     def on_draw(self):
         arcade.start_render()
