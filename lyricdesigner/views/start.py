@@ -12,6 +12,7 @@ class StartView(arcade.View):
         self.progress_bar = ProgressBar((0, 0), 400, 50, (64, 64, 64))
         self.progress_bar.center_x = self.window.width / 2
         self.progress_bar.center_y = 200
+        self.frame = 0
 
     def on_show(self):
         arcade.set_background_color(arcade.color.BLACK)
@@ -20,6 +21,9 @@ class StartView(arcade.View):
         self.current_time += delta_time
         self.current_time = round(self.current_time, 2)
         self.progress_bar.progress += (delta_time / 60)
+        self.frame += 1
+        if self.frame % 60 == 0:
+            print(arcade.get_fps())
 
     def on_draw(self):
         arcade.start_render()

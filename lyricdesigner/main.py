@@ -11,6 +11,8 @@ SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 SCREEN_TITLE = f"LyricDesigner {__version__}"
 
+arcade.enable_timings()
+
 
 class MyGame(arcade.Window):
     def __init__(self):
